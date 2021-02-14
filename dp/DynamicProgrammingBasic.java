@@ -14,6 +14,14 @@ public class DynamicProgrammingBasic {
 		dp[0] = 0;
 		
 		int ans = minCoins(n, a, dp);
+		
+		//above line will give Integer.MAX_VALUE for below input
+		//n = 15 1
+		//a= {4}
+		
+		//Fix
+		ans = ans == Integer.MAX_VALUE ? -1 : ans;
+		
 		System.out.println(ans);
 		
 		for(int x: dp) {
